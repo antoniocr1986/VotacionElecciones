@@ -1,0 +1,12 @@
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.csproj.AssemblyReference.cache
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.csproj.SuggestedBindingRedirects.cache
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.FormRegistro.resources
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.Properties.Resources.resources
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.csproj.GenerateResource.cache
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\bin\Release\VotoElectronico.exe.config
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\bin\Release\VotoElectronico.exe
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\bin\Release\VotoElectronico.pdb
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.exe
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.pdb
+C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Release\VotoElectronico.FormVotacion.resources

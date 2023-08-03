@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace VotoElectronico
 {
-    public class Votante
+    public class PartidoPolitico
     {
-        public string Nombre { get; set; }  
-        public int Edad { get; set; }   
-        public bool Antecedentes { get; set; }  
-
+        public string Nombre { get; set; }
+        public string Ideologia { get; set; }
     }
 }
