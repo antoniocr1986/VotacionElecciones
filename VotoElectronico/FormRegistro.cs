@@ -13,6 +13,8 @@ namespace VotoElectronico
 {
     public partial class FormRegistro : Form
     {
+        FormVotacion ventanaVotacion = new FormVotacion();
+
         public FormRegistro()
         {
             InitializeComponent();
@@ -29,9 +31,7 @@ namespace VotoElectronico
             {
                 if (!string.IsNullOrEmpty(textBoxNombre.Text) && int.Parse(textBoxEdad.Text) >= 18
                 && !checkBoxAntecedentes.Checked)
-                {
-                    MessageBox.Show("Procedemos a la votacion y siguiente ventana por lo tanto");
-                    FormVotacion ventanaVotacion = new FormVotacion();
+                {             
                     ventanaVotacion.ShowDialog();
                 }
                 else
@@ -55,6 +55,18 @@ namespace VotoElectronico
                 MessageBox.Show("Excepcion: " + ex.Message);
             }
             
+        }
+
+        private void buttonResultados_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Partido popular: " + ventanaVotacion.VotosPP + " votos\n" +
+                "PSOE: " + ventanaVotacion.VotosPSOE + " votos\n" +
+                "SUMAR: " + ventanaVotacion.VotosSUMAR + " votos\n" +
+                "VOX: " + ventanaVotacion.VotosVOX + " votos\n" +
+                "JUNTS: " + ventanaVotacion.VotosJUNTS + " votos\n" +
+                "ERC: " + ventanaVotacion.VotosERC + " votos\n" +
+                "PNV: " + ventanaVotacion.VotosPNV + " votos\n"+
+                "EH Bildu: " + ventanaVotacion.VotosEHBildu + " votos");
         }
     }
 }

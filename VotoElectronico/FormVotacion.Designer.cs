@@ -155,6 +155,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormVotacion";
             this.Text = "VOTACION";
+            this.Load += new System.EventHandler(this.FormVotacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

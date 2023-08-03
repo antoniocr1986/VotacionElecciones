@@ -34,11 +34,12 @@
             this.labelEdad = new System.Windows.Forms.Label();
             this.textBoxEdad = new System.Windows.Forms.TextBox();
             this.checkBoxAntecedentes = new System.Windows.Forms.CheckBox();
+            this.buttonResultados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonConfirmar
             // 
-            this.buttonConfirmar.Location = new System.Drawing.Point(99, 156);
+            this.buttonConfirmar.Location = new System.Drawing.Point(38, 157);
             this.buttonConfirmar.Name = "buttonConfirmar";
             this.buttonConfirmar.Size = new System.Drawing.Size(96, 23);
             this.buttonConfirmar.TabIndex = 0;
@@ -88,12 +89,23 @@
             this.checkBoxAntecedentes.Text = "Antecedentes";
             this.checkBoxAntecedentes.UseVisualStyleBackColor = true;
             // 
+            // buttonResultados
+            // 
+            this.buttonResultados.Location = new System.Drawing.Point(163, 157);
+            this.buttonResultados.Name = "buttonResultados";
+            this.buttonResultados.Size = new System.Drawing.Size(113, 23);
+            this.buttonResultados.TabIndex = 8;
+            this.buttonResultados.Text = "VER RESULTADOS";
+            this.buttonResultados.UseVisualStyleBackColor = true;
+            this.buttonResultados.Click += new System.EventHandler(this.buttonResultados_Click);
+            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(311, 215);
+            this.ClientSize = new System.Drawing.Size(300, 215);
+            this.Controls.Add(this.buttonResultados);
             this.Controls.Add(this.checkBoxAntecedentes);
             this.Controls.Add(this.textBoxEdad);
             this.Controls.Add(this.labelEdad);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Label labelEdad;
         private System.Windows.Forms.TextBox textBoxEdad;
         private System.Windows.Forms.CheckBox checkBoxAntecedentes;
+        private System.Windows.Forms.Button buttonResultados;
     }
 }
 

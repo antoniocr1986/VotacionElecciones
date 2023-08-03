@@ -12,6 +12,15 @@ namespace VotoElectronico
 {
     public partial class FormVotacion : Form
     {
+        public int VotosPP {get; set;}
+        public int VotosPSOE { get; set; }
+        public int VotosSUMAR { get; set; }
+        public int VotosVOX { get; set; }
+        public int VotosJUNTS { get; set; }
+        public int VotosERC { get; set; }
+        public int VotosPNV { get; set; }
+        public int VotosEHBildu { get; set; }
+
         public FormVotacion()
         {
             InitializeComponent();
@@ -26,8 +35,46 @@ namespace VotoElectronico
             }
             else
             {
+                if (radioButtonPP.Checked)
+                {
+                    VotosPP++;
+                }
+                if (radioButtonPSOE.Checked)
+                {
+                    VotosPSOE++;
+                }
+                if (radioButtonSUMAR.Checked)
+                {
+                    VotosSUMAR++;
+                }
+                if (radioButtonVOX.Checked)
+                {
+                    VotosVOX++;
+                }
+                if (radioButtonJUNTS.Checked)
+                {
+                    VotosJUNTS++;
+                }
+                if (radioButtonERC.Checked)
+                {
+                    VotosERC++;
+                }
+                if (radioButtonPNV.Checked)
+                {
+                    VotosPNV++;
+                }
+                if (radioButtonEHBildu.Checked)
+                {
+                    VotosEHBildu++;
+                }
                 MessageBox.Show("Has introducido tu voto correctamente");
+                this.Hide();
             }    
+        }
+
+        private void FormVotacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
