@@ -1,0 +1,39 @@
+3. Aplicación de Voto Electrónico
+Esta aplicación recreará el proceso de votación durante unas elecciones, pero con una variedad.
+La aplicación debería:
+
+-Incluir un formulario de registro para registrar un nuevo votante!!!!!!!!!!!!!!!!!!!!!!!!
+
+-Comprobar si el usuario cumple los requisitos para votar 
+(mayor de 18 años, no tiene antecedentes penales, etc.)!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+-Ofrecer de 5-10 opciones entre las que elegir!!!!!!!!!!!!!!!!!!!
+
+-Mostrar los resultados de las elecciones!!!!!!!!!!!!!!!!!!!!
+
+De nuevo, puede usar SQL Server para la base de datos, y Visual Studio para la parte de la interfaz.
+Si necesita refrescar sus conocimientos de SQL, puede consultar este curso online. 
+Aunque Windows 8 es la última versión de Windows puede seguir desarrollando pensando en Windows 7.
+
+VOTO ELECTRONICO v1.0
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+VOTO ELECTRONICO 2.0
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+VOTO ELECTRONICO 3.0
+-----------------------------------------------------------------------------------------------
