@@ -47,7 +47,7 @@
             this.buttonConfirmarVoto.TabIndex = 0;
             this.buttonConfirmarVoto.Text = "CONFIRMAR VOTO";
             this.buttonConfirmarVoto.UseVisualStyleBackColor = true;
-            this.buttonConfirmarVoto.Click += new System.EventHandler(this.buttonConfirmarVoto_Click);
+            this.buttonConfirmarVoto.Click += new System.EventHandler(this.ButtonConfirmarVoto_Click);
             // 
             // radioButtonPP
             // 
@@ -155,7 +155,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormVotacion";
             this.Text = "VOTACION";
-            this.Load += new System.EventHandler(this.FormVotacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

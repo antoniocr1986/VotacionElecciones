@@ -20,12 +20,7 @@ namespace VotoElectronico
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonConfirmar_Click(object sender, EventArgs e)
+        private void ButtonConfirmar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,17 +42,15 @@ namespace VotoElectronico
                     if (Convert.ToInt32(textBoxEdad.Text) != 0 && Convert.ToInt32(textBoxEdad.Text) < 18 )
                     {
                         MessageBox.Show("Menores de edad no pueden votar");
-                    }                 
-                
+                    }                     
                 }
             }catch(Exception ex)
             {
                 MessageBox.Show("Excepcion: " + ex.Message);
-            }
-            
+            }        
         }
 
-        private void buttonResultados_Click(object sender, EventArgs e)
+        private void ButtonResultados_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Partido popular: " + ventanaVotacion.VotosPP + " votos\n" +
                 "PSOE: " + ventanaVotacion.VotosPSOE + " votos\n" +

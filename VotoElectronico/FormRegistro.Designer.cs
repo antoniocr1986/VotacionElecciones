@@ -45,7 +45,7 @@
             this.buttonConfirmar.TabIndex = 0;
             this.buttonConfirmar.Text = "CONFIRMAR";
             this.buttonConfirmar.UseVisualStyleBackColor = true;
-            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
+            this.buttonConfirmar.Click += new System.EventHandler(this.ButtonConfirmar_Click);
             // 
             // labelNombre
             // 
@@ -97,7 +97,7 @@
             this.buttonResultados.TabIndex = 8;
             this.buttonResultados.Text = "VER RESULTADOS";
             this.buttonResultados.UseVisualStyleBackColor = true;
-            this.buttonResultados.Click += new System.EventHandler(this.buttonResultados_Click);
+            this.buttonResultados.Click += new System.EventHandler(this.ButtonResultados_Click);
             // 
             // FormRegistro
             // 
@@ -115,7 +115,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormRegistro";
             this.Text = "REGISTRO VOTANTE";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

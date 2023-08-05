@@ -26,7 +26,7 @@ namespace VotoElectronico
             InitializeComponent();
         }
 
-        private void buttonConfirmarVoto_Click(object sender, EventArgs e)
+        private void ButtonConfirmarVoto_Click(object sender, EventArgs e)
         {
             if (!radioButtonPP.Checked && !radioButtonPSOE.Checked && !radioButtonSUMAR.Checked && !radioButtonVOX.Checked 
                 && !radioButtonJUNTS.Checked && !radioButtonERC.Checked && !radioButtonEHBildu.Checked && !radioButtonPNV.Checked)
@@ -35,46 +35,49 @@ namespace VotoElectronico
             }
             else
             {
-                if (radioButtonPP.Checked)
+                if (sender is RadioButton radioButton)
                 {
-                    VotosPP++;
-                }
-                if (radioButtonPSOE.Checked)
-                {
-                    VotosPSOE++;
-                }
-                if (radioButtonSUMAR.Checked)
-                {
-                    VotosSUMAR++;
-                }
-                if (radioButtonVOX.Checked)
-                {
-                    VotosVOX++;
-                }
-                if (radioButtonJUNTS.Checked)
-                {
-                    VotosJUNTS++;
-                }
-                if (radioButtonERC.Checked)
-                {
-                    VotosERC++;
-                }
-                if (radioButtonPNV.Checked)
-                {
-                    VotosPNV++;
-                }
-                if (radioButtonEHBildu.Checked)
-                {
-                    VotosEHBildu++;
+                    switch (radioButton.Name)
+                    {
+                        case "radioButtonPP":
+                            VotosPP++;
+                            break;
+
+                        case "radioButtonPSOE":
+                            VotosPSOE++;
+                            break;
+
+                        case "radioButtonSUMAR":
+                            VotosSUMAR++;
+                            break;
+
+                        case "radioButtonVOX":
+                            VotosVOX++;
+                            break;
+
+                        case "radioButtonERC":
+                            VotosERC++;
+                            break;
+
+                        case "radioButtonJUNTS":
+                            VotosJUNTS++;
+                            break;
+
+                        case "radioButtonPNV":
+                            VotosPNV++;
+                            break;
+
+                        case "radioButtonEHBildu":
+                            VotosEHBildu++;
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
                 MessageBox.Show("Has introducido tu voto correctamente");
                 this.Hide();
-            }    
-        }
-
-        private void FormVotacion_Load(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
