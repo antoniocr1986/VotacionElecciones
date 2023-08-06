@@ -13,6 +13,8 @@ namespace VotoElectronico
 {
     public partial class FormRegistro : Form
     {
+        private readonly int mayoriaEdad = 18;
+
         FormVotacion ventanaVotacion = new FormVotacion();
 
         public FormRegistro()
@@ -24,7 +26,7 @@ namespace VotoElectronico
         {
             try
             {
-                if (!string.IsNullOrEmpty(textBoxNombre.Text) && int.Parse(textBoxEdad.Text) >= 18
+                if (!string.IsNullOrEmpty(textBoxNombre.Text) && int.Parse(textBoxEdad.Text) >= mayoriaEdad
                 && !checkBoxAntecedentes.Checked)
                 {             
                     ventanaVotacion.ShowDialog();
@@ -39,7 +41,7 @@ namespace VotoElectronico
                     {
                         MessageBox.Show("Personas con antecedentes penales no pueden votar");
                     }
-                    if (Convert.ToInt32(textBoxEdad.Text) != 0 && Convert.ToInt32(textBoxEdad.Text) < 18 )
+                    if (Convert.ToInt32(textBoxEdad.Text) != 0 && Convert.ToInt32(textBoxEdad.Text) < mayoriaEdad)
                     {
                         MessageBox.Show("Menores de edad no pueden votar");
                     }                     
@@ -52,14 +54,14 @@ namespace VotoElectronico
 
         private void ButtonResultados_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Partido popular: " + ventanaVotacion.VotosPP + " votos\n" +
-                "PSOE: " + ventanaVotacion.VotosPSOE + " votos\n" +
-                "SUMAR: " + ventanaVotacion.VotosSUMAR + " votos\n" +
-                "VOX: " + ventanaVotacion.VotosVOX + " votos\n" +
-                "JUNTS: " + ventanaVotacion.VotosJUNTS + " votos\n" +
-                "ERC: " + ventanaVotacion.VotosERC + " votos\n" +
-                "PNV: " + ventanaVotacion.VotosPNV + " votos\n"+
-                "EH Bildu: " + ventanaVotacion.VotosEHBildu + " votos");
+            MessageBox.Show($"Partido popular: {ventanaVotacion.VotosPP} votos\n" +
+                $"PSOE: {ventanaVotacion.VotosPSOE} votos\n" +
+                $"SUMAR: {ventanaVotacion.VotosSUMAR} votos\n" +
+                $"VOX: {ventanaVotacion.VotosVOX} votos\n" +
+                $"JUNTS: {ventanaVotacion.VotosJUNTS} votos\n" +
+                $"ERC: {ventanaVotacion.VotosERC} votos\n" +
+                $"PNV: {ventanaVotacion.VotosPNV} votos\n"+
+                $"EH Bildu: {ventanaVotacion.VotosEHBildu} votos");
         }
     }
 }

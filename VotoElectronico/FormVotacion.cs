@@ -35,46 +35,39 @@ namespace VotoElectronico
             }
             else
             {
-                if (sender is RadioButton radioButton)
+                if (radioButtonPP.Checked)
                 {
-                    switch (radioButton.Name)
-                    {
-                        case "radioButtonPP":
-                            VotosPP++;
-                            break;
-
-                        case "radioButtonPSOE":
-                            VotosPSOE++;
-                            break;
-
-                        case "radioButtonSUMAR":
-                            VotosSUMAR++;
-                            break;
-
-                        case "radioButtonVOX":
-                            VotosVOX++;
-                            break;
-
-                        case "radioButtonERC":
-                            VotosERC++;
-                            break;
-
-                        case "radioButtonJUNTS":
-                            VotosJUNTS++;
-                            break;
-
-                        case "radioButtonPNV":
-                            VotosPNV++;
-                            break;
-
-                        case "radioButtonEHBildu":
-                            VotosEHBildu++;
-                            break;
-
-                        default:
-                            break;
-                    }
+                    VotosPP++;
                 }
+                else if (radioButtonPSOE.Checked)
+                {
+                    VotosPSOE++;
+                }
+                else if (radioButtonSUMAR.Checked)
+                {
+                    VotosSUMAR++;
+                }
+                else if (radioButtonVOX.Checked)
+                {
+                    VotosVOX++;
+                }
+                else if (radioButtonERC.Checked)
+                {
+                    VotosERC++;
+                }
+                else if (radioButtonJUNTS.Checked)
+                {
+                    VotosJUNTS++;
+                }
+                else if (radioButtonPNV.Checked)
+                {
+                    VotosPNV++;
+                }
+                else if (radioButtonEHBildu.Checked)
+                {
+                    VotosEHBildu++;
+                }
+                
                 MessageBox.Show("Has introducido tu voto correctamente");
                 this.Hide();
             }
