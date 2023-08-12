@@ -4,3 +4,14 @@ C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico
 C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.Properties.Resources.resources
 C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.GenerateResource.cache
 C:\Users\anton\Desktop\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.CoreCompileInputs.cache
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\bin\Debug\VotoElectronico.exe.config
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\bin\Debug\VotoElectronico.exe
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\bin\Debug\VotoElectronico.pdb
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.AssemblyReference.cache
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.FormRegistro.resources
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.FormVotacion.resources
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.Properties.Resources.resources
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.GenerateResource.cache
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.CoreCompileInputs.cache
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.exe
+C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.pdb

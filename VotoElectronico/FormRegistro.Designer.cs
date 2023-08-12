@@ -35,14 +35,17 @@
             this.textBoxEdad = new System.Windows.Forms.TextBox();
             this.checkBoxAntecedentes = new System.Windows.Forms.CheckBox();
             this.buttonResultados = new System.Windows.Forms.Button();
+            this.labelApellidos = new System.Windows.Forms.Label();
+            this.textBoxApellidos = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonConfirmar
             // 
-            this.buttonConfirmar.Location = new System.Drawing.Point(38, 157);
+            this.buttonConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirmar.Location = new System.Drawing.Point(27, 201);
             this.buttonConfirmar.Name = "buttonConfirmar";
-            this.buttonConfirmar.Size = new System.Drawing.Size(96, 23);
-            this.buttonConfirmar.TabIndex = 0;
+            this.buttonConfirmar.Size = new System.Drawing.Size(106, 35);
+            this.buttonConfirmar.TabIndex = 6;
             this.buttonConfirmar.Text = "CONFIRMAR";
             this.buttonConfirmar.UseVisualStyleBackColor = true;
             this.buttonConfirmar.Click += new System.EventHandler(this.ButtonConfirmar_Click);
@@ -50,15 +53,16 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(35, 55);
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(35, 43);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelNombre.Size = new System.Drawing.Size(62, 18);
             this.labelNombre.TabIndex = 1;
             this.labelNombre.Text = "Nombre";
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(125, 52);
+            this.textBoxNombre.Location = new System.Drawing.Point(131, 43);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombre.TabIndex = 2;
@@ -66,15 +70,16 @@
             // labelEdad
             // 
             this.labelEdad.AutoSize = true;
-            this.labelEdad.Location = new System.Drawing.Point(35, 85);
+            this.labelEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEdad.Location = new System.Drawing.Point(35, 115);
             this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(32, 13);
+            this.labelEdad.Size = new System.Drawing.Size(42, 18);
             this.labelEdad.TabIndex = 3;
             this.labelEdad.Text = "Edad";
             // 
             // textBoxEdad
             // 
-            this.textBoxEdad.Location = new System.Drawing.Point(125, 78);
+            this.textBoxEdad.Location = new System.Drawing.Point(131, 115);
             this.textBoxEdad.Name = "textBoxEdad";
             this.textBoxEdad.Size = new System.Drawing.Size(100, 20);
             this.textBoxEdad.TabIndex = 4;
@@ -82,29 +87,50 @@
             // checkBoxAntecedentes
             // 
             this.checkBoxAntecedentes.AutoSize = true;
-            this.checkBoxAntecedentes.Location = new System.Drawing.Point(72, 118);
+            this.checkBoxAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAntecedentes.Location = new System.Drawing.Point(72, 156);
             this.checkBoxAntecedentes.Name = "checkBoxAntecedentes";
-            this.checkBoxAntecedentes.Size = new System.Drawing.Size(92, 17);
-            this.checkBoxAntecedentes.TabIndex = 7;
+            this.checkBoxAntecedentes.Size = new System.Drawing.Size(116, 22);
+            this.checkBoxAntecedentes.TabIndex = 5;
             this.checkBoxAntecedentes.Text = "Antecedentes";
             this.checkBoxAntecedentes.UseVisualStyleBackColor = true;
             // 
             // buttonResultados
             // 
-            this.buttonResultados.Location = new System.Drawing.Point(163, 157);
+            this.buttonResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResultados.Location = new System.Drawing.Point(158, 195);
             this.buttonResultados.Name = "buttonResultados";
-            this.buttonResultados.Size = new System.Drawing.Size(113, 23);
-            this.buttonResultados.TabIndex = 8;
+            this.buttonResultados.Size = new System.Drawing.Size(118, 46);
+            this.buttonResultados.TabIndex = 7;
             this.buttonResultados.Text = "VER RESULTADOS";
             this.buttonResultados.UseVisualStyleBackColor = true;
             this.buttonResultados.Click += new System.EventHandler(this.ButtonResultados_Click);
+            // 
+            // labelApellidos
+            // 
+            this.labelApellidos.AutoSize = true;
+            this.labelApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellidos.Location = new System.Drawing.Point(35, 79);
+            this.labelApellidos.Name = "labelApellidos";
+            this.labelApellidos.Size = new System.Drawing.Size(67, 18);
+            this.labelApellidos.TabIndex = 9;
+            this.labelApellidos.Text = "Apellidos";
+            // 
+            // textBoxApellidos
+            // 
+            this.textBoxApellidos.Location = new System.Drawing.Point(131, 79);
+            this.textBoxApellidos.Name = "textBoxApellidos";
+            this.textBoxApellidos.Size = new System.Drawing.Size(100, 20);
+            this.textBoxApellidos.TabIndex = 3;
             // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(300, 215);
+            this.ClientSize = new System.Drawing.Size(303, 263);
+            this.Controls.Add(this.textBoxApellidos);
+            this.Controls.Add(this.labelApellidos);
             this.Controls.Add(this.buttonResultados);
             this.Controls.Add(this.checkBoxAntecedentes);
             this.Controls.Add(this.textBoxEdad);
@@ -129,6 +155,8 @@
         private System.Windows.Forms.TextBox textBoxEdad;
         private System.Windows.Forms.CheckBox checkBoxAntecedentes;
         private System.Windows.Forms.Button buttonResultados;
+        private System.Windows.Forms.Label labelApellidos;
+        private System.Windows.Forms.TextBox textBoxApellidos;
     }
 }
 
