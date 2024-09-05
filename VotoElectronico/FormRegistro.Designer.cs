@@ -90,9 +90,9 @@
             this.checkBoxAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAntecedentes.Location = new System.Drawing.Point(72, 156);
             this.checkBoxAntecedentes.Name = "checkBoxAntecedentes";
-            this.checkBoxAntecedentes.Size = new System.Drawing.Size(116, 22);
+            this.checkBoxAntecedentes.Size = new System.Drawing.Size(171, 22);
             this.checkBoxAntecedentes.TabIndex = 5;
-            this.checkBoxAntecedentes.Text = "Antecedentes";
+            this.checkBoxAntecedentes.Text = "Antecedentes penales";
             this.checkBoxAntecedentes.UseVisualStyleBackColor = true;
             // 
             // buttonResultados

@@ -15,3 +15,13 @@ C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\Vot
 C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.csproj.CoreCompileInputs.cache
 C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.exe
 C:\Users\anton\OneDrive\Escritorio\VotoElectronico\VotoElectronico\obj\Debug\VotoElectronico.pdb
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\bin\Debug\VotoElectronico.exe.config
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.exe
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.pdb
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.csprojResolveAssemblyReference.cache
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.FormRegistro.resources
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.FormVotacion.resources
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.Properties.Resources.resources
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\obj\Debug\VotoElectronico.csproj.GenerateResource.Cache
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\bin\Debug\VotoElectronico.exe
+C:\Users\anton\OneDrive\Escritorio\Git julio\VotacionElecciones\VotoElectronico\bin\Debug\VotoElectronico.pdb
