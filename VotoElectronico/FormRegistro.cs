@@ -34,10 +34,12 @@ namespace VotoElectronico
             if (string.IsNullOrWhiteSpace(textBoxNombre.Text))
             {
                 MessageBox.Show("Introduce tu nombre");
+                return;
             }
             if (string.IsNullOrWhiteSpace(textBoxApellidos.Text))
             {
                 MessageBox.Show("Introduce tus apellidos");
+                return;
             }
             if (checkBoxAntecedentes.Checked == true)
             {
