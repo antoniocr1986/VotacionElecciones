@@ -58,60 +58,68 @@ namespace VotoElectronico
                     if (!string.IsNullOrWhiteSpace(textBoxNombre.Text) && !string.IsNullOrWhiteSpace(textBoxApellidos.Text) 
                         && edad >= mayoriaEdad && !checkBoxAntecedentes.Checked)
                     {
+                        
                         string nombre = textBoxNombre.Text ;
                         string apellidos = textBoxApellidos.Text;
-                        // int age = Convert.ToInt32(textBoxEdad.Text);
                         bool antecedentes = checkBoxAntecedentes.Checked;
 
-                        // Consulta SQL para insertar un votante
-                        string query = "INSERT INTO Votante (Nombre, Apellidos, Edad, Antecedentes) " +
+                        if (VotanteExiste(nombre, apellidos, edad))
+                        {
+                            MessageBox.Show("El votante ya realizo su voto anteriormnete.");
+                            return;
+                        }
+                        else
+                        {
+                            // Consulta SQL para insertar un votante
+                            string query = "INSERT INTO Votante (Nombre, Apellidos, Edad, Antecedentes) " +
                                         "VALUES (@Nombre, @Apellidos, @Edad, @Antecedentes)";
 
-                        // Usar SqlConnection para conectarse a la base de datos
-                        using (SqlConnection conexion = objetoConexion.getConexion())
-                        {
-                            try
+                            // Usar SqlConnection para conectarse a la base de datos
+                            using (SqlConnection conexion = objetoConexion.getConexion())
                             {
-                                // Crear el comando para la consulta de inserción
-                                using (SqlCommand command = new SqlCommand(query, conexion))
+                                try
                                 {
-                                    // Parámetros para evitar inyección SQL
-                                    command.Parameters.AddWithValue("@Nombre", nombre);
-                                    command.Parameters.AddWithValue("@Apellidos", apellidos);
-                                    command.Parameters.AddWithValue("@Edad", edad);
-                                    command.Parameters.AddWithValue("@Antecedentes", antecedentes);
-
-                                    // Ejecutar la consulta
-                                    int rowsAffected = command.ExecuteNonQuery();
-
-                                    // Verificar si se ha insertado correctamente
-                                    if (rowsAffected > 0)
+                                    // Crear el comando para la consulta de inserción
+                                    using (SqlCommand command = new SqlCommand(query, conexion))
                                     {
-                                        MessageBox.Show("El votante ha sido insertado exitosamente.");
-                                        textBoxNombre.Text = "";
-                                        textBoxApellidos.Text = "";
-                                        textBoxEdad.Text = "";
-                                        checkBoxAntecedentes.Checked = false;
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("No se pudo insertar el votante.");
+                                        // Parámetros para evitar inyección SQL
+                                        command.Parameters.AddWithValue("@Nombre", nombre);
+                                        command.Parameters.AddWithValue("@Apellidos", apellidos);
+                                        command.Parameters.AddWithValue("@Edad", edad);
+                                        command.Parameters.AddWithValue("@Antecedentes", antecedentes);
+
+                                        // Ejecutar la consulta
+                                        int rowsAffected = command.ExecuteNonQuery();
+
+                                        // Verificar si se ha insertado correctamente
+                                        if (rowsAffected > 0)
+                                        {
+                                            MessageBox.Show("El votante ha sido insertado exitosamente.");
+                                            textBoxNombre.Text = "";
+                                            textBoxApellidos.Text = "";
+                                            textBoxEdad.Text = "";
+                                            checkBoxAntecedentes.Checked = false;
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("No se pudo insertar el votante.");
+                                        }
                                     }
                                 }
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("DentroDelCatch");
-                                Console.WriteLine("Error: " + ex.Message);
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("DentroDelCatch");
+                                    Console.WriteLine("Error: " + ex.Message);
+                                }
                             }
                         }
+                        ventanaVotacion.ShowDialog();
                     }
-                    ventanaVotacion.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Introduce un formato correcto en la edad");
-                }
+                    else
+                    {
+                        MessageBox.Show("Introduce un formato correcto en la edad");
+                    }
+                }                  
             }
             catch(Exception ex)
             {
@@ -182,6 +190,32 @@ namespace VotoElectronico
                         MessageBox.Show("No se pudo establecer conexión con la base de datos.");
                         return;
                     }
+                }
+            }
+        }
+
+        public bool VotanteExiste(string nombre, string apellidos, int edad)
+        {
+            // Consulta SQL para verificar si el votante existe
+            string query = "SELECT COUNT(*) FROM Votante WHERE Nombre = @Nombre AND Apellidos = @Apellidos AND @Edad = @Edad";
+
+            using (SqlConnection conexion = objetoConexion.getConexion())
+            {
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.Parameters.AddWithValue("@Nombre", nombre);  // Parámetros SQL
+                command.Parameters.AddWithValue("@Apellidos", apellidos);
+                command.Parameters.AddWithValue("@Edad", edad);
+
+                try
+                {
+                    int count = (int)command.ExecuteScalar();  // Ejecutar consulta y obtener el número de coincidencias
+
+                    return count > 0;  // Devuelve true si hay al menos una coincidencia, lo que indica que el votante existe
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return false;
                 }
             }
         }
