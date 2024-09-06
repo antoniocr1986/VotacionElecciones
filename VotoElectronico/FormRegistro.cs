@@ -56,7 +56,6 @@ namespace VotoElectronico
                     if (!string.IsNullOrWhiteSpace(textBoxNombre.Text) && !string.IsNullOrWhiteSpace(textBoxApellidos.Text) 
                         && edad >= mayoriaEdad && !checkBoxAntecedentes.Checked)
                     {
-                        MessageBox.Show("Dentro del if");
                         string nombre = textBoxNombre.Text ;
                         string apellidos = textBoxApellidos.Text;
                         // int age = Convert.ToInt32(textBoxEdad.Text);
@@ -69,32 +68,32 @@ namespace VotoElectronico
                         // Usar SqlConnection para conectarse a la base de datos
                         using (SqlConnection conexion = objetoConexion.getConexion())
                         {
-                            MessageBox.Show("Dentro del using");
                             try
                             {
                                 // Crear el comando para la consulta de inserción
                                 using (SqlCommand command = new SqlCommand(query, conexion))
                                 {
-                                    MessageBox.Show("Dentro del 2o using");
                                     // Parámetros para evitar inyección SQL
                                     command.Parameters.AddWithValue("@Nombre", nombre);
                                     command.Parameters.AddWithValue("@Apellidos", apellidos);
                                     command.Parameters.AddWithValue("@Edad", edad);
                                     command.Parameters.AddWithValue("@Antecedentes", antecedentes);
 
-                                    MessageBox.Show("confirmar4");
                                     // Ejecutar la consulta
                                     int rowsAffected = command.ExecuteNonQuery();
 
-                                    MessageBox.Show("confirmar5");
                                     // Verificar si se ha insertado correctamente
                                     if (rowsAffected > 0)
                                     {
-                                        Console.WriteLine("El votante ha sido insertado exitosamente.");
+                                        MessageBox.Show("El votante ha sido insertado exitosamente.");
+                                        textBoxNombre.Text = "";
+                                        textBoxApellidos.Text = "";
+                                        textBoxEdad.Text = "";
+                                        checkBoxAntecedentes.Checked = false;
                                     }
                                     else
                                     {
-                                        Console.WriteLine("No se pudo insertar el votante.");
+                                        MessageBox.Show("No se pudo insertar el votante.");
                                     }
                                 }
                             }
