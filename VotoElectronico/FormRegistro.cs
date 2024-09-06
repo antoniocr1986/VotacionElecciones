@@ -20,6 +20,8 @@ namespace VotoElectronico
 
         public static Dictionary<string, int> votosPorPartido = new Dictionary<string, int>();
 
+        Conexion objetoConexion = new Conexion();
+
         public FormRegistro()
         {
             InitializeComponent();
@@ -28,34 +30,82 @@ namespace VotoElectronico
         private void ButtonConfirmar_Click(object sender, EventArgs e)
         {
             int edad;
+
+            if (string.IsNullOrWhiteSpace(textBoxNombre.Text))
+            {
+                MessageBox.Show("Introduce tu nombre");
+            }
+            if (string.IsNullOrWhiteSpace(textBoxApellidos.Text))
+            {
+                MessageBox.Show("Introduce tus apellidos");
+            }
+            if (checkBoxAntecedentes.Checked == true)
+            {
+                MessageBox.Show("Personas con antecedentes penales no pueden votar");
+                return;
+            }
             try
             {
                 if (int.TryParse(textBoxEdad.Text, out edad))
                 {
+                    if (edad < mayoriaEdad)
+                    {
+                        MessageBox.Show("Menores de edad no pueden votar");
+                        return;
+                    }
                     if (!string.IsNullOrWhiteSpace(textBoxNombre.Text) && !string.IsNullOrWhiteSpace(textBoxApellidos.Text) 
-                        && int.Parse(textBoxEdad.Text) >= mayoriaEdad && !checkBoxAntecedentes.Checked)
+                        && edad >= mayoriaEdad && !checkBoxAntecedentes.Checked)
                     {
-                        ventanaVotacion.ShowDialog();
+                        MessageBox.Show("Dentro del if");
+                        string nombre = textBoxNombre.Text ;
+                        string apellidos = textBoxApellidos.Text;
+                        // int age = Convert.ToInt32(textBoxEdad.Text);
+                        bool antecedentes = checkBoxAntecedentes.Checked;
+
+                        // Consulta SQL para insertar un votante
+                        string query = "INSERT INTO Votante (Nombre, Apellidos, Edad, Antecedentes) " +
+                                        "VALUES (@Nombre, @Apellidos, @Edad, @Antecedentes)";
+
+                        // Usar SqlConnection para conectarse a la base de datos
+                        using (SqlConnection conexion = objetoConexion.getConexion())
+                        {
+                            MessageBox.Show("Dentro del using");
+                            try
+                            {
+                                // Crear el comando para la consulta de inserción
+                                using (SqlCommand command = new SqlCommand(query, conexion))
+                                {
+                                    MessageBox.Show("Dentro del 2o using");
+                                    // Parámetros para evitar inyección SQL
+                                    command.Parameters.AddWithValue("@Nombre", nombre);
+                                    command.Parameters.AddWithValue("@Apellidos", apellidos);
+                                    command.Parameters.AddWithValue("@Edad", edad);
+                                    command.Parameters.AddWithValue("@Antecedentes", antecedentes);
+
+                                    MessageBox.Show("confirmar4");
+                                    // Ejecutar la consulta
+                                    int rowsAffected = command.ExecuteNonQuery();
+
+                                    MessageBox.Show("confirmar5");
+                                    // Verificar si se ha insertado correctamente
+                                    if (rowsAffected > 0)
+                                    {
+                                        Console.WriteLine("El votante ha sido insertado exitosamente.");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("No se pudo insertar el votante.");
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("DentroDelCatch");
+                                Console.WriteLine("Error: " + ex.Message);
+                            }
+                        }
                     }
-                    else
-                    {
-                        if (string.IsNullOrWhiteSpace(textBoxNombre.Text))
-                        {
-                            MessageBox.Show("Introduce tu nombre");
-                        }
-                        if (string.IsNullOrWhiteSpace(textBoxApellidos.Text))
-                        {
-                            MessageBox.Show("Introduce tus apellidos");
-                        }
-                        if (checkBoxAntecedentes.Checked)
-                        {
-                            MessageBox.Show("Personas con antecedentes penales no pueden votar");
-                        }
-                        if (Convert.ToInt32(textBoxEdad.Text) != 0 && Convert.ToInt32(textBoxEdad.Text) < mayoriaEdad)
-                        {
-                            MessageBox.Show("Menores de edad no pueden votar");
-                        }
-                    }
+                    ventanaVotacion.ShowDialog();
                 }
                 else
                 {
@@ -73,7 +123,6 @@ namespace VotoElectronico
             bool VotacionComenzada = false;
 
             //***A1 Conectar con BD
-            Conexion objetoConexion = new Conexion();
             using (SqlConnection conexion = objetoConexion.getConexion())
             {
                 string queryCount = "SELECT COUNT(*) FROM PartidoPolitico";
