@@ -83,6 +83,7 @@
             this.textBoxEdad.Name = "textBoxEdad";
             this.textBoxEdad.Size = new System.Drawing.Size(100, 20);
             this.textBoxEdad.TabIndex = 4;
+            this.textBoxEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEdad_KeyPress);
             // 
             // checkBoxAntecedentes
             // 

@@ -19,11 +19,12 @@ VOTO ELECTRONICO v1.0
 --------------------------------------------------------------------------------------------
 
 
+-Adaptar aplicación a sistema con base de datos!!!!!!!!!
+-Corrección de bugs varios al adaptar a BD!!!!!
+-Confirmar que el votante no ha votado anteriormente!!!!!!
 
-
-
-
-
+TODO
+Controlar que una ventana de votación jamás se abrirá antes de confirmar que el votante es valido
 
 VOTO ELECTRONICO 2.0
 ---------------------------------------------------------------------------------------------

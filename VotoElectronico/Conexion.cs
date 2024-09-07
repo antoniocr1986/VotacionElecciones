@@ -27,7 +27,7 @@ namespace VotoElectronico
             {
                 cconex.ConnectionString = connectionString;
                 cconex.Open();
-                MessageBox.Show("Se conecto correctamente a la Base de Datos");
+                //MessageBox.Show("Se conecto correctamente a la Base de Datos");
             }
             catch (SqlException e)
             {

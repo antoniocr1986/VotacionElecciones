@@ -41,6 +41,11 @@ namespace VotoElectronico
                 MessageBox.Show("Introduce tus apellidos");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(textBoxEdad.Text))
+            {
+                MessageBox.Show("Introduce tu edad");
+                return;
+            }
             if (checkBoxAntecedentes.Checked == true)
             {
                 MessageBox.Show("Personas con antecedentes penales no pueden votar");
@@ -217,6 +222,16 @@ namespace VotoElectronico
                     MessageBox.Show("Error: " + ex.Message);
                     return false;
                 }
+            }
+        }
+
+        private void textBoxEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si el carácter no es un dígito y no es la tecla de retroceso (Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es un dígito, cancelar el evento para que no se introduzca en el TextBox
+                e.Handled = true;
             }
         }
     }
